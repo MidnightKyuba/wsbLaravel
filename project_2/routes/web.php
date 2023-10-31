@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -88,3 +89,11 @@ Route::get('/users', function(){
     ];
     return View('users', ['users'=>$users]);
 });
+
+Route::get('/car', [CarController::class, 'ShowTableCar']);
+
+Route::get('/addCarForms', function(){
+    return View('addCar');
+});
+
+Route::post('AddCar', [CarController::class, 'AddCar']);
