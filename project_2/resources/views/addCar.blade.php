@@ -7,7 +7,7 @@
 </head>
 <body>
     @if(session('result'))
-        <br>{{ session('result') }}<br><br>
+        {{ session('result') }}
     @endif
     <form action="AddCar" method="post">
         @csrf

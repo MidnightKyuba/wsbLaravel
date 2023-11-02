@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\ShowDbTableController;
+use App\Http\Controllers\AddUserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -97,3 +99,11 @@ Route::get('/addCarForms', function(){
 });
 
 Route::post('AddCar', [CarController::class, 'AddCar']);
+
+Route::get('/showDBTable', [ShowDbTableController::class, 'ShowUsers']);
+
+Route::get('/addUserForm', function(){
+    return View('forms.addUser');
+});
+
+Route::post('AddUser', [AddUserController::class, 'storeUser']);
